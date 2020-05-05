@@ -17,6 +17,7 @@ export default function App() {
 
   const[feelsLike, setFeelsLike] = useState('')
   const[sunrise, setSunrise] = useState('')
+  const[sunset, setSunset] = useState('')
   const[icon, setIcon] = useState('')
 
   const capturarCidade = (cidade) => {
@@ -50,6 +51,7 @@ export default function App() {
       setDadosJson2(dados["current"])
       setFeelsLike(dadosJson2.feels_like.toString())
       setSunrise(dadosJson2.sunrise.toString())
+      setSunset(dadosJson2.sunset.toString())
       setIcon(dadosJson2.weather[0].icon.toString())
       Keyboard.dismiss();
     })
@@ -70,7 +72,7 @@ export default function App() {
           onPress={obtemLatLon}
         />
       </View>
-      <PrevisaoItem feelsLike={feelsLike} sunrise={sunrise} icon={icon}/>
+      <PrevisaoItem feelsLike={feelsLike} sunrise={sunrise} icon={icon} sunset={sunset}/>
     </View>
   );
 }

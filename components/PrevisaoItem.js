@@ -13,6 +13,7 @@ const PrevisaoItem = (props) => {
                 <View>
                     <View style={estilos.primeiraLinha}>
                         <Text>Nascer do sol : {new Date(props.sunrise * 1000).toLocaleTimeString()}</Text>
+                        <Text>Por do sol : {new Date(props.sunset * 1000).toLocaleTimeString()}</Text>
                     </View>
                     <View style={estilos.segundaLinha}>  
                         <Text style={estilos.valor}>Sensação termica: {props.feelsLike} </Text>
@@ -43,7 +44,8 @@ const estilos = StyleSheet.create({
         marginBottom: 5
     },
     tela: {
-        flexDirection: 'row'
+        flexDirection: 'row',
+        height: 70
     },
     imagem: {
         width: 50,
